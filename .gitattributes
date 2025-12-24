@@ -1,0 +1,12 @@
+# Treat Jinja/HTML templates as documentation
+app/templates/** linguist-documentation
+# Treat static build outputs as vendored/generated
+app/static/** linguist-vendored
+app/static/css/styles.css linguist-vendored
+app/static/css/tailwind.css linguist-generated
+# Mark Node/Tailwind config files as vendored
+package.json linguist-vendored
+tailwind.config.js linguist-vendored
+postcss.config.js linguist-vendored
+# Mark JSON data files as documentation
+app/data/*.json linguist-documentation

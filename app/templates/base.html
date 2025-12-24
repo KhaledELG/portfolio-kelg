@@ -17,28 +17,12 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6" x-data>
     <header class="flex items-center justify-between py-4 sticky top-0 z-20 backdrop-blur">
       <a href="/?lang={{ lang or settings.default_locale }}" class="text-xl font-semibold tracking-tight">Khaled EL GHAMMARTI</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm uppercase tracking-wide">
-        {% set lang_param = (lang or settings.default_locale) %}
-        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#skills">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</a>
-        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#experience">{{ t.sections.experience if t and t.sections and t.sections.experience else 'Experience' }}</a>
-        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#projects">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</a>
-        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#certifications">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</a>
-        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#contact">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</a>
-      </nav>
-      <button class="md:hidden" @click="$store.ui.toggleMenu()" aria-label="Menu">
-        <span class="block w-8 h-0.5 bg-slate-100 mb-1"></span>
-        <span class="block w-8 h-0.5 bg-slate-100 mb-1"></span>
-        <span class="block w-8 h-0.5 bg-slate-100"></span>
-      </button>
+      <div class="flex items-center gap-2 text-xs">
+        {% set current_lang = (lang or settings.default_locale).lower() %}
+        <a href="/?lang=fr" class="px-3 py-1 rounded-md border border-slate-700 {{ 'bg-cyan-500 text-slate-950' if current_lang == 'fr' else 'text-slate-200' }}">FR</a>
+        <a href="/?lang=en" class="px-3 py-1 rounded-md border border-slate-700 {{ 'bg-cyan-500 text-slate-950' if current_lang == 'en' else 'text-slate-200' }}">EN</a>
+      </div>
     </header>
-
-    <div x-show="$store.ui.menuOpen" class="md:hidden mb-4 space-y-3" x-transition>
-      <a class="block" href="/?lang={{ lang_param }}#skills">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</a>
-      <a class="block" href="/?lang={{ lang_param }}#experience">{{ t.sections.experience if t and t.sections and t.sections.experience else 'Experience' }}</a>
-      <a class="block" href="/?lang={{ lang_param }}#projects">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</a>
-      <a class="block" href="/?lang={{ lang_param }}#certifications">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</a>
-      <a class="block" href="/?lang={{ lang_param }}#contact">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</a>
-    </div>
 
     {% block content %}{% endblock %}
 

@@ -19,7 +19,7 @@
         <p class="font-semibold">{{ cert.name }}</p>
         <p class="text-sm text-slate-400">{{ cert.issuer }} • {{ cert.date }}</p>
         {% if cert.credential_url %}
-        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">Vérifier</a>
+        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">Verify</a>
         {% endif %}
       </div>
     </div>

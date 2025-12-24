@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "portfolio-kelg"
+version = "0.1.0"
+description = "Portfolio professionnel FastAPI + Jinja2 + Tailwind"
+authors = ["Khaled El Ghammarti <khaled@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"
+uvicorn = {extras = ["standard"], version = "^0.30.0"}
+jinja2 = "^3.1.4"
+httpx = "^0.27.0"
+pydantic = "^2.7.0"
+pydantic-settings = "^2.2.1"
+python-multipart = "^0.0.9"
+
+
+[build-system]
+requires = ["poetry-core>=1.7.0"]
+build-backend = "poetry.core.masonry.api"

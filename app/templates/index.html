@@ -35,6 +35,33 @@
   </div>
 </section>
 
+<section id="certifications" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {% for cert in certifications %}
+    <div class="glass rounded-xl p-4 shadow-soft flex items-center gap-4">
+      <div class="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center">
+        {% if cert.logo %}
+        <img src="{{ cert.logo }}" alt="{{ cert.name }}" class="max-h-10 object-contain" loading="lazy" />
+        {% else %}
+        <span class="text-cyan-200 text-sm">Logo</span>
+        {% endif %}
+      </div>
+      <div>
+        <p class="font-semibold">{{ cert.name }}</p>
+        <p class="text-sm text-slate-400">{{ cert.issuer }} • {{ cert.date }}</p>
+        {% if cert.credential_url %}
+        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">{{ t.labels.verify if t and t.labels and t.labels.verify else 'Verify' }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 <section id="skills" class="py-10">
   <div class="flex items-center justify-between mb-6">
     <h2 class="text-2xl font-display font-semibold">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</h2>
@@ -125,33 +152,6 @@
         {% endfor %}
       </div>
     </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="certifications" class="py-10">
-  <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</h2>
-    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
-  </div>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-    {% for cert in certifications %}
-    <div class="glass rounded-xl p-4 shadow-soft flex items-center gap-4">
-      <div class="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center">
-        {% if cert.logo %}
-        <img src="{{ cert.logo }}" alt="{{ cert.name }}" class="max-h-10 object-contain" loading="lazy" />
-        {% else %}
-        <span class="text-cyan-200 text-sm">Logo</span>
-        {% endif %}
-      </div>
-      <div>
-        <p class="font-semibold">{{ cert.name }}</p>
-        <p class="text-sm text-slate-400">{{ cert.issuer }} • {{ cert.date }}</p>
-        {% if cert.credential_url %}
-        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">{{ t.labels.verify if t and t.labels and t.labels.verify else 'Verify' }}</a>
-        {% endif %}
-      </div>
-    </div>
     {% endfor %}
   </div>
 </section>

@@ -2,42 +2,42 @@
 {% block content %}
 <section class="grid lg:grid-cols-2 gap-8 items-center py-12" id="hero">
   <div class="space-y-6">
-    <p class="text-cyan-300 uppercase text-sm tracking-[0.3em]">Portfolio</p>
-    <h1 class="text-4xl sm:text-5xl font-display font-bold leading-tight">Khaled EL GHAMMARTI</h1>
-    <p class="text-xl text-slate-300">Cloud & DevSecOps Engineer</p>
-    <p class="text-slate-400 max-w-2xl">Cloud & DevSecOps engineer crafting secure, automated, observable platforms. Kubernetes, AWS, IaC, GitOps, and platform reliability are my playground.</p>
+    <p class="text-cyan-300 uppercase text-sm tracking-[0.3em]">{{ t.badge if t and t.badge else 'Portfolio' }}</p>
+    <h1 class="text-4xl sm:text-5xl font-display font-bold leading-tight">{{ t.hero.name if t and t.hero and t.hero.name else 'Khaled EL GHAMMARTI' }}</h1>
+    <p class="text-xl text-slate-300">{{ t.hero.title if t and t.hero and t.hero.title else 'Cloud & DevSecOps Engineer' }}</p>
+    <p class="text-slate-400 max-w-2xl">{{ t.hero.bio if t and t.hero and t.hero.bio else 'Cloud & DevSecOps engineer crafting secure, automated, observable platforms. Kubernetes, AWS, IaC, GitOps, and platform reliability are my playground.' }}</p>
     <div class="flex flex-wrap gap-3">
-    <a href="/resume" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold shadow-soft hover:-translate-y-0.5 transition">Download my resume</a>
-    <a href="#contact" class="px-4 py-2 rounded-md border border-cyan-500 text-cyan-100 font-semibold hover:bg-cyan-500/10 transition">Let’s talk</a>
+    <a href="/resume" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold shadow-soft hover:-translate-y-0.5 transition">{{ t.hero.cta_resume if t and t.hero and t.hero.cta_resume else 'Download my resume' }}</a>
+    <a href="#contact" class="px-4 py-2 rounded-md border border-cyan-500 text-cyan-100 font-semibold hover:bg-cyan-500/10 transition">{{ t.hero.cta_contact if t and t.hero and t.hero.cta_contact else "Let's talk" }}</a>
     </div>
   </div>
   <div class="grid grid-cols-2 gap-4">
     <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
-      <p class="text-sm text-slate-400">Cloud</p>
-      <p class="text-3xl font-display font-semibold">Resilient</p>
-      <p class="text-slate-400 mt-2">Secure multi-cloud architectures.</p>
+      <p class="text-sm text-slate-400">{{ t.cards.cloud.title if t and t.cards and t.cards.cloud and t.cards.cloud.title else 'Cloud' }}</p>
+      <p class="text-3xl font-display font-semibold">{{ t.cards.cloud.headline if t and t.cards and t.cards.cloud and t.cards.cloud.headline else 'Resilient' }}</p>
+      <p class="text-slate-400 mt-2">{{ t.cards.cloud.body if t and t.cards and t.cards.cloud and t.cards.cloud.body else 'Secure multi-cloud architectures.' }}</p>
     </div>
     <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
-      <p class="text-sm text-slate-400">DevOps</p>
-      <p class="text-3xl font-display font-semibold">Automated</p>
-      <p class="text-slate-400 mt-2">CI/CD, GitOps, observability.</p>
+      <p class="text-sm text-slate-400">{{ t.cards.devops.title if t and t.cards and t.cards.devops and t.cards.devops.title else 'DevOps' }}</p>
+      <p class="text-3xl font-display font-semibold">{{ t.cards.devops.headline if t and t.cards and t.cards.devops and t.cards.devops.headline else 'Automated' }}</p>
+      <p class="text-slate-400 mt-2">{{ t.cards.devops.body if t and t.cards and t.cards.devops and t.cards.devops.body else 'CI/CD, GitOps, observability.' }}</p>
     </div>
     <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
-      <p class="text-sm text-slate-400">Security</p>
-      <p class="text-3xl font-display font-semibold">Hardened</p>
-      <p class="text-slate-400 mt-2">Zero trust, IAM, SOC.</p>
+      <p class="text-sm text-slate-400">{{ t.cards.security.title if t and t.cards and t.cards.security and t.cards.security.title else 'Security' }}</p>
+      <p class="text-3xl font-display font-semibold">{{ t.cards.security.headline if t and t.cards and t.cards.security and t.cards.security.headline else 'Hardened' }}</p>
+      <p class="text-slate-400 mt-2">{{ t.cards.security.body if t and t.cards and t.cards.security and t.cards.security.body else 'Zero trust, IAM, SOC.' }}</p>
     </div>
     <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
-      <p class="text-sm text-slate-400">Monitoring</p>
-      <p class="text-3xl font-display font-semibold">Observable</p>
-      <p class="text-slate-400 mt-2">SLOs, alerting, dashboards.</p>
+      <p class="text-sm text-slate-400">{{ t.cards.monitoring.title if t and t.cards and t.cards.monitoring and t.cards.monitoring.title else 'Monitoring' }}</p>
+      <p class="text-3xl font-display font-semibold">{{ t.cards.monitoring.headline if t and t.cards and t.cards.monitoring and t.cards.monitoring.headline else 'Observable' }}</p>
+      <p class="text-slate-400 mt-2">{{ t.cards.monitoring.body if t and t.cards and t.cards.monitoring and t.cards.monitoring.body else 'SLOs, alerting, dashboards.' }}</p>
     </div>
   </div>
 </section>
 
 <section id="skills" class="py-10">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">Skills</h2>
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</h2>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -56,7 +56,7 @@
 
 <section id="experience" class="py-10">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">Experience</h2>
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.experience if t and t.sections and t.sections.experience else 'Experience' }}</h2>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <ol class="relative border-l border-slate-800 space-y-6">
@@ -83,7 +83,7 @@
 
 <section id="technology-stack" class="py-10">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">Technology Stack</h2>
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.tech_stack if t and t.sections and t.sections.tech_stack else 'Technology Stack' }}</h2>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -102,7 +102,7 @@
 
 <section id="projects" class="py-10">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">Projects</h2>
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</h2>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <div class="grid md:grid-cols-2 gap-4">
@@ -131,7 +131,7 @@
 
 <section id="certifications" class="py-10">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-display font-semibold">Certifications</h2>
+    <h2 class="text-2xl font-display font-semibold">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</h2>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -159,17 +159,17 @@
 <section id="contact" class="py-12">
   <div class="glass rounded-2xl p-8 shadow-soft grid md:grid-cols-2 gap-6">
     <div>
-      <h3 class="text-2xl font-display font-semibold mb-3">Contact</h3>
-      <p class="text-slate-300">Ready to discuss cloud migration, platform hardening, or observability.</p>
+      <h3 class="text-2xl font-display font-semibold mb-3">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</h3>
+      <p class="text-slate-300">{{ t.contact.body if t and t.contact and t.contact.body else 'Ready to discuss cloud migration, platform hardening, or observability.' }}</p>
       <div class="mt-4 flex gap-3">
         <a class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold" href="mailto:khaled.elghammarti@hotmail.com">Email</a>
         <a class="px-4 py-2 rounded-md border border-slate-700" href="https://www.linkedin.com/in/khaled-el-ghammarti" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
     <div class="space-y-3 text-slate-300 text-sm">
-      <p>Available for freelance missions, security audits, or DevOps coaching.</p>
-      <p>Based in Bordeaux • Remote friendly.</p>
-      <p>Reply within 24h.</p>
+      <p>{{ t.contact.line1 if t and t.contact and t.contact.line1 else 'Available for freelance missions, security audits, or DevOps coaching.' }}</p>
+      <p>{{ t.contact.line2 if t and t.contact and t.contact.line2 else 'Based in Bordeaux • Remote friendly.' }}</p>
+      <p>{{ t.contact.line3 if t and t.contact and t.contact.line3 else 'Reply within 24h.' }}</p>
     </div>
   </div>
 </section>

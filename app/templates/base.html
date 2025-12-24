@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang or settings.default_locale }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khaled EL GHAMMARTI | Cloud & DevSecOps</title>
-  <meta name="description" content="Cloud & DevSecOps engineer crafting secure, automated, observable platforms." />
-  <meta property="og:title" content="Khaled EL GHAMMARTI | Cloud & DevSecOps" />
-  <meta property="og:description" content="Cloud & DevSecOps engineer crafting secure, automated, observable platforms." />
-  <meta property="og:image" content="/static/images/projects/og.png" />
+  <title>{{ (t.meta.title if t and t.meta and t.meta.title else 'Khaled EL GHAMMARTI | Cloud & DevSecOps') }}</title>
+  <meta name="description" content="{{ (t.meta.description if t and t.meta and t.meta.description else 'Cloud & DevSecOps engineer crafting secure, automated, observable platforms.') }}" />
+  <meta property="og:title" content="{{ (t.meta.title if t and t.meta and t.meta.title else 'Khaled EL GHAMMARTI | Cloud & DevSecOps') }}" />
+  <meta property="og:description" content="{{ (t.meta.description if t and t.meta and t.meta.description else 'Cloud & DevSecOps engineer crafting secure, automated, observable platforms.') }}" />
+  <meta property="og:image" content="{{ (t.meta.og_image if t and t.meta and t.meta.og_image else '/static/images/projects/og.png') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
@@ -16,13 +16,14 @@
 <body class="font-body bg-slate-950 text-slate-100 min-h-screen">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6" x-data>
     <header class="flex items-center justify-between py-4 sticky top-0 z-20 backdrop-blur">
-      <a href="/" class="text-xl font-semibold tracking-tight">Khaled EL GHAMMARTI</a>
+      <a href="/?lang={{ lang or settings.default_locale }}" class="text-xl font-semibold tracking-tight">Khaled EL GHAMMARTI</a>
       <nav class="hidden md:flex items-center gap-6 text-sm uppercase tracking-wide">
-        <a class="hover:text-cyan-300" href="#skills">Skills</a>
-        <a class="hover:text-cyan-300" href="#experience">Experience</a>
-        <a class="hover:text-cyan-300" href="#projects">Projects</a>
-        <a class="hover:text-cyan-300" href="#certifications">Certifications</a>
-        <a class="hover:text-cyan-300" href="#contact">Contact</a>
+        {% set lang_param = (lang or settings.default_locale) %}
+        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#skills">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</a>
+        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#experience">{{ t.sections.experience if t and t.sections and t.sections.experience else 'Experience' }}</a>
+        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#projects">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</a>
+        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#certifications">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</a>
+        <a class="hover:text-cyan-300" href="/?lang={{ lang_param }}#contact">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</a>
       </nav>
       <button class="md:hidden" @click="$store.ui.toggleMenu()" aria-label="Menu">
         <span class="block w-8 h-0.5 bg-slate-100 mb-1"></span>
@@ -32,18 +33,18 @@
     </header>
 
     <div x-show="$store.ui.menuOpen" class="md:hidden mb-4 space-y-3" x-transition>
-      <a class="block" href="#skills">Skills</a>
-      <a class="block" href="#experience">Experience</a>
-      <a class="block" href="#projects">Projects</a>
-      <a class="block" href="#certifications">Certifications</a>
-      <a class="block" href="#contact">Contact</a>
+      <a class="block" href="/?lang={{ lang_param }}#skills">{{ t.sections.skills if t and t.sections and t.sections.skills else 'Skills' }}</a>
+      <a class="block" href="/?lang={{ lang_param }}#experience">{{ t.sections.experience if t and t.sections and t.sections.experience else 'Experience' }}</a>
+      <a class="block" href="/?lang={{ lang_param }}#projects">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</a>
+      <a class="block" href="/?lang={{ lang_param }}#certifications">{{ t.sections.certifications if t and t.sections and t.sections.certifications else 'Certifications' }}</a>
+      <a class="block" href="/?lang={{ lang_param }}#contact">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</a>
     </div>
 
     {% block content %}{% endblock %}
 
     <footer class="py-10 text-sm text-slate-400">
       <div class="flex flex-wrap justify-between gap-4 items-center">
-        <span>Built with FastAPI, Jinja2, Tailwind and Alpine.js</span>
+        <span>{{ t.footer.made_with if t and t.footer and t.footer.made_with else 'Built with FastAPI, Jinja2, Tailwind and Alpine.js' }}</span>
         <div class="flex gap-4">
           <a class="hover:text-cyan-300" href="https://github.com/{{ settings.github_username }}" aria-label="GitHub">GitHub</a>
           <a class="hover:text-cyan-300" href="https://www.linkedin.com/in/khaled-el-ghammarti" aria-label="LinkedIn">LinkedIn</a>

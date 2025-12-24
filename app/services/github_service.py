@@ -40,6 +40,17 @@ class GitHubService:
             return list(self._cache.value)
         return None
 
+    def _normalize_homepage(self, homepage: str | None) -> str | None:
+        """Return a safe homepage value or None when GitHub sends empty/invalid strings."""
+        if not homepage:
+            return None
+        candidate = homepage.strip()
+        if not candidate:
+            return None
+        if candidate.startswith(("http://", "https://")):
+            return candidate
+        return None
+
     async def _fetch_readme_preview(self, client: httpx.AsyncClient, repo_name: str) -> str | None:
         url = f"https://api.github.com/repos/{self.username}/{repo_name}/readme"
         try:
@@ -84,12 +95,16 @@ class GitHubService:
             for repo in repos:
                 topics = repo.get("topics") or []
                 preview = await self._fetch_readme_preview(client, repo["name"])
+                repo_url = repo.get("html_url")
+                if not repo_url:
+                    continue
                 homepage = repo.get("homepage") or None  # GitHub may return empty strings
+                homepage = self._normalize_homepage(homepage)
                 try:
                     project = Project(
                         name=repo["name"],
                         description=repo.get("description") or "",
-                        url=repo["html_url"],
+                        url=repo_url,
                         homepage=homepage,
                         topics=topics,
                         language=repo.get("language"),
@@ -100,8 +115,26 @@ class GitHubService:
                         ),
                     )
                 except ValidationError:
-                    # Skip repositories with malformed data instead of failing startup
-                    continue
+                    if homepage is not None:
+                        # Retry without homepage when GitHub returns an invalid demo URL
+                        try:
+                            project = Project(
+                                name=repo["name"],
+                                description=repo.get("description") or "",
+                                url=repo_url,
+                                homepage=None,
+                                topics=topics,
+                                language=repo.get("language"),
+                                stars=repo.get("stargazers_count"),
+                                readme_preview=preview,
+                                updated_at=datetime.fromisoformat(
+                                    repo["updated_at"].replace("Z", "+00:00")
+                                ),
+                            )
+                        except ValidationError:
+                            continue
+                    else:
+                        continue
 
                 projects.append(project)
 

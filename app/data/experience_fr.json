@@ -1,0 +1,42 @@
+[
+  {
+    "company": "Cdiscount (Daveo)",
+    "role": "Ingénieur DevOps - Kubernetes",
+    "start": "12/2025",
+    "end": "Présent",
+    "description": "Exploitation et sécurisation de plateformes Kubernetes en production, administration de Harbor et Ceph/Rook, automatisation de l'infrastructure avec Terraform, Ansible et Helm, et mise en place des pratiques GitOps.",
+    "technologies": ["Vanilla Kubernetes", "Harbor", "Ceph", "Rook", "Terraform", "Ansible", "Helm", "GitOps"]
+  },
+  {
+    "company": "CGI",
+    "role": "Tech Lead & Owner Plateforme Ops",
+    "start": "09/2022",
+    "end": "08/2025",
+    "description": "Pilotage d'une équipe DevOps de 6 personnes sur une plateforme d'outillage conteneurisée (Kubernetes RKE2), gestion du cycle de vie applicatif et interface technique client pour l'onboarding et le suivi.",
+    "technologies": ["RKE2", "GitLab CI", "Helm", "Kubernetes"]
+  },
+  {
+    "company": "CGI",
+    "role": "Infrastructure as Code & GitOps",
+    "start": "09/2023",
+    "end": "01/2024",
+    "description": "Automatisation du provisioning de clusters K3s et RKE2 avec Ansible et GitLab CI; déploiement des outils DevOps via charts Helm et pilotage par Argo CD.",
+    "technologies": ["K3s", "RKE2", "GitLab CI", "Ansible", "ArgoCD", "Helm"]
+  },
+  {
+    "company": "CGI",
+    "role": "AWS Cloud & CI/CD Sécurisée",
+    "start": "01/2023",
+    "end": "04/2023",
+    "description": "Conception et exploitation d'APIs serverless sur AWS, industrialisation des pipelines CI/CD avec GitLab CI et CloudFormation, intégration des bonnes pratiques DevSecOps.",
+    "technologies": ["AWS", "CloudFormation", "GitLab CI", "API Gateway", "Lambda", "Aurora", "S3"]
+  },
+  {
+    "company": "CGI",
+    "role": "Observabilité & Monitoring",
+    "start": "03/2022",
+    "end": "09/2022",
+    "description": "Mise en place d'une stack ELK, automatisation du déploiement des agents et des tableaux de bord, amélioration de la couverture de logs et réduction du bruit d'alerting.",
+    "technologies": ["ELK", "Jenkins", "Ansible", "Scripting bash"]
+  }
+]

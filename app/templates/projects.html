@@ -2,7 +2,7 @@
 {% block content %}
 <section class="py-12" id="projects-page">
   <div class="flex items-center justify-between mb-6">
-    <h1 class="text-3xl font-display font-semibold">{{ t.sections.projects }}</h1>
+    <h1 class="text-3xl font-display font-semibold">{{ t.sections.projects if t and t.sections and t.sections.projects else 'Projects' }}</h1>
     <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
   </div>
   <div class="grid md:grid-cols-2 gap-4">
@@ -13,7 +13,7 @@
           <h3 class="text-xl font-semibold">{{ project.name }}</h3>
           <p class="text-sm text-slate-400">{{ project.language or 'Multi-lang' }}</p>
         </div>
-        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">Repo</a>
+        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">{{ t.labels.repo if t and t.labels and t.labels.repo else 'Repo' }}</a>
       </div>
       <p class="text-slate-300">{{ project.description }}</p>
       {% if project.readme_preview %}
@@ -24,7 +24,7 @@
         <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-100 text-xs">{{ topic }}</span>
         {% endfor %}
       </div>
-      <div class="text-xs text-slate-400">Mis à jour {{ project.updated_at.date() if project.updated_at else '' }}</div>
+      <div class="text-xs text-slate-400">{{ t.labels.updated if t and t.labels and t.labels.updated else 'Updated' }} {{ project.updated_at.date() if project.updated_at else '' }}</div>
     </article>
     {% endfor %}
   </div>

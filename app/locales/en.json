@@ -4,6 +4,7 @@
     "description": "Cloud, DevOps and Cybersecurity portfolio with experience, projects and certifications.",
     "og_image": "/static/images/projects/og.png"
   },
+  "badge": "Portfolio",
   "hero": {
     "name": "Khaled EL GHAMMARTI",
     "title": "Cloud & DevSecOps Engineer",
@@ -19,6 +20,54 @@
     "tech_stack": "Technology Stack",
     "about": "About",
     "contact": "Contact"
+  },
+  "labels": {
+    "repo": "Repo",
+    "updated": "Updated"
+  },
+  "cards": {
+    "cloud": {
+      "title": "Cloud",
+      "headline": "Resilient",
+      "body": "Secure multi-cloud architectures."
+    },
+    "devops": {
+      "title": "DevOps",
+      "headline": "Automated",
+      "body": "CI/CD, GitOps, observability."
+    },
+    "security": {
+      "title": "Security",
+      "headline": "Hardened",
+      "body": "Zero trust, IAM, SOC."
+    },
+    "monitoring": {
+      "title": "Monitoring",
+      "headline": "Observable",
+      "body": "SLOs, alerting, dashboards."
+    }
+  },
+  "contact": {
+    "body": "Ready to discuss cloud migration, platform hardening, or observability.",
+    "line1": "Available for freelance missions, security audits, or DevOps coaching.",
+    "line2": "Based in Bordeaux • Remote friendly.",
+    "line3": "Reply within 24h."
+  },
+  "tech_categories": {
+    "Cloud & Orchestration": "Cloud & Orchestration",
+    "Infrastructure as Code": "Infrastructure as Code",
+    "CI/CD & GitOps": "CI/CD & GitOps",
+    "Security": "Security",
+    "Networking & Service Mesh": "Networking & Service Mesh",
+    "Observability": "Observability",
+    "Databases & Storage": "Databases & Storage",
+    "Languages": "Languages"
+  },
+  "skills_categories": {
+    "Cloud": "Cloud",
+    "DevOps": "DevOps",
+    "Security": "Security",
+    "Monitoring": "Monitoring"
   },
   "footer": {
     "made_with": "Built with FastAPI, Jinja2, Tailwind and Alpine.js"

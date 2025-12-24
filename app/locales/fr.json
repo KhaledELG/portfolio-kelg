@@ -1,9 +1,10 @@
 {
   "meta": {
-    "title": "Khaled El Ghammarti | Systems & Network Engineer",
+    "title": "Khaled El Ghammarti | Ingénieur Systèmes & Réseaux",
     "description": "Portfolio Cloud, DevOps et Cybersecurity avec expériences, projets et certifications.",
     "og_image": "/static/images/projects/og.png"
   },
+  "badge": "Portfolio",
   "hero": {
     "name": "Khaled EL GHAMMARTI",
     "title": "Cloud & DevSecOps Engineer",
@@ -19,6 +20,54 @@
     "tech_stack": "Technology Stack",
     "about": "À propos",
     "contact": "Contact"
+  },
+  "labels": {
+    "repo": "Repo",
+    "updated": "Mis à jour"
+  },
+  "cards": {
+    "cloud": {
+      "title": "Cloud",
+      "headline": "Résilient",
+      "body": "Architectures multi-cloud sécurisées."
+    },
+    "devops": {
+      "title": "DevOps",
+      "headline": "Automatisé",
+      "body": "CI/CD, GitOps, observabilité."
+    },
+    "security": {
+      "title": "Sécurité",
+      "headline": "Durci",
+      "body": "Zero trust, IAM, SOC."
+    },
+    "monitoring": {
+      "title": "Supervision",
+      "headline": "Observable",
+      "body": "SLOs, alerting, dashboards."
+    }
+  },
+  "contact": {
+    "body": "Prêt à parler migration cloud, sécurisation de plateforme ou observabilité.",
+    "line1": "Disponible pour missions freelance, audits sécurité ou coaching DevOps.",
+    "line2": "Basé à Bordeaux • Remote friendly.",
+    "line3": "Réponse sous 24h."
+  },
+  "tech_categories": {
+    "Cloud & Orchestration": "Cloud & Orchestration",
+    "Infrastructure as Code": "Infrastructure as Code",
+    "CI/CD & GitOps": "CI/CD & GitOps",
+    "Security": "Sécurité",
+    "Networking & Service Mesh": "Réseau & Service Mesh",
+    "Observability": "Observabilité",
+    "Databases & Storage": "Bases de données & Stockage",
+    "Languages": "Langages"
+  },
+  "skills_categories": {
+    "Cloud": "Cloud",
+    "DevOps": "DevOps",
+    "Security": "Sécurité",
+    "Monitoring": "Supervision"
   },
   "footer": {
     "made_with": "Conçu avec FastAPI, Jinja2, Tailwind et Alpine.js"

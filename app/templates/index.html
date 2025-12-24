@@ -113,7 +113,7 @@
           <h3 class="text-xl font-semibold">{{ project.name }}</h3>
           <p class="text-sm text-slate-400">{{ project.language or 'Multi-lang' }}</p>
         </div>
-        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">Repo</a>
+        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">{{ t.labels.repo if t and t.labels and t.labels.repo else 'Repo' }}</a>
       </div>
       <p class="text-slate-300">{{ project.description }}</p>
       {% if project.readme_preview %}
@@ -148,7 +148,7 @@
         <p class="font-semibold">{{ cert.name }}</p>
         <p class="text-sm text-slate-400">{{ cert.issuer }} • {{ cert.date }}</p>
         {% if cert.credential_url %}
-        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">Verify</a>
+        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">{{ t.labels.verify if t and t.labels and t.labels.verify else 'Verify' }}</a>
         {% endif %}
       </div>
     </div>
@@ -157,7 +157,7 @@
 </section>
 
 <section id="contact" class="py-12">
-  <div class="glass rounded-2xl p-8 shadow-soft grid md:grid-cols-2 gap-6">
+  <div class="glass rounded-2xl p-8 shadow-soft grid gap-6">
     <div>
       <h3 class="text-2xl font-display font-semibold mb-3">{{ t.sections.contact if t and t.sections and t.sections.contact else 'Contact' }}</h3>
       <p class="text-slate-300">{{ t.contact.body if t and t.contact and t.contact.body else 'Ready to discuss cloud migration, platform hardening, or observability.' }}</p>
@@ -165,8 +165,6 @@
         <a class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold" href="mailto:khaled.elghammarti@hotmail.com">Email</a>
         <a class="px-4 py-2 rounded-md border border-slate-700" href="https://www.linkedin.com/in/khaled-el-ghammarti" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
-    </div>
-    <div class="space-y-3 text-slate-300 text-sm">
     </div>
   </div>
 </section>

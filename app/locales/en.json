@@ -23,6 +23,7 @@
   },
   "labels": {
     "repo": "Repo",
+    "verify": "Verify",
     "updated": "Updated"
   },
   "cards": {
@@ -48,10 +49,7 @@
     }
   },
   "contact": {
-    "body": "Ready to discuss cloud migration, platform hardening, or observability.",
-    "line1": "Available for freelance missions, security audits, or DevOps coaching.",
-    "line2": "Based in Bordeaux • Remote friendly.",
-    "line3": "Reply within 24h."
+    "body": "Ready to discuss cloud migration, platform hardening, or observability."
   },
   "tech_categories": {
     "Cloud & Orchestration": "Cloud & Orchestration",

@@ -7,7 +7,7 @@
   "badge": "Portfolio",
   "hero": {
     "name": "Khaled EL GHAMMARTI",
-    "title": "Cloud & DevSecOps Engineer",
+    "title": "Ingénieur Cloud & DevSecOps",
     "bio": "Ingénieur Cloud & DevSecOps : plateformes sécurisées, automatisées et observables. Kubernetes, AWS, IaC, GitOps et fiabilité sont mon terrain de jeu.",
     "cta_resume": "Télécharger mon CV",
     "cta_contact": "Discutons"
@@ -17,12 +17,13 @@
     "experience": "Expériences",
     "projects": "Projets",
     "certifications": "Certifications",
-    "tech_stack": "Technology Stack",
+    "tech_stack": "Stack technologique",
     "about": "À propos",
     "contact": "Contact"
   },
   "labels": {
-    "repo": "Repo",
+    "repo": "Dépôt",
+    "verify": "Vérifier",
     "updated": "Mis à jour"
   },
   "cards": {
@@ -48,19 +49,16 @@
     }
   },
   "contact": {
-    "body": "Prêt à parler migration cloud, sécurisation de plateforme ou observabilité.",
-    "line1": "Disponible pour missions freelance, audits sécurité ou coaching DevOps.",
-    "line2": "Basé à Bordeaux • Remote friendly.",
-    "line3": "Réponse sous 24h."
+    "body": "Prêt à parler migration cloud, sécurisation de plateforme ou observabilité."
   },
   "tech_categories": {
-    "Cloud & Orchestration": "Cloud & Orchestration",
+    "Cloud & Orchestration": "Cloud et orchestration",
     "Infrastructure as Code": "Infrastructure as Code",
-    "CI/CD & GitOps": "CI/CD & GitOps",
+    "CI/CD & GitOps": "CI/CD et GitOps",
     "Security": "Sécurité",
-    "Networking & Service Mesh": "Réseau & Service Mesh",
+    "Networking & Service Mesh": "Réseau et service mesh",
     "Observability": "Observabilité",
-    "Databases & Storage": "Bases de données & Stockage",
+    "Databases & Storage": "Bases de données et stockage",
     "Languages": "Langages"
   },
   "skills_categories": {

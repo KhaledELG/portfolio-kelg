@@ -144,7 +144,8 @@ class GitHubService:
     async def warm_cache(self) -> None:
         """Warm cache in the background without blocking startup."""
         try:
-            await self.fetch_repos()
+            # Warm the cache with a generous limit so other endpoints can slice as needed.
+            await self.fetch_repos(limit=100)
         except httpx.HTTPError:
             # We keep startup resilient if GitHub is temporarily unreachable.
             return

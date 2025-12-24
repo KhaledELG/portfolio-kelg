@@ -101,13 +101,6 @@ def load_locale(locale: str | None = None) -> dict[str, Any]:
         return {}
 
 
-skills = {
-    "Cloud": ["AWS", "Azure", "GCP", "OVH"],
-    "DevOps": ["Docker", "Kubernetes", "Terraform", "Ansible", "GitHub Actions"],
-    "Security": ["Vault", "IAM", "Zero Trust"],
-    "Monitoring": ["Prometheus", "Grafana", "ELK", "Loki"],
-}
-
 github_service = GitHubService(
     username=settings.github_username,
     token=settings.github_token,

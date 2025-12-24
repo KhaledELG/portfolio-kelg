@@ -2,56 +2,56 @@
   {
     "name": "CKS - Certified Kubernetes Security Specialist",
     "issuer": "CNCF",
-    "date": "2024",
+    "date": "2025",
     "logo": "/static/images/logos/cks.png",
     "credential_url": "https://www.credly.com/badges/1254e089-4855-4b2c-b704-1b1c0961d563"
   },
   {
     "name": "CKAD - Certified Kubernetes Application Developer",
     "issuer": "CNCF",
-    "date": "2023",
+    "date": "2025",
     "logo": "/static/images/logos/ckad.png",
     "credential_url": "https://www.credly.com/badges/e031250e-4ed6-4eeb-9c28-43f0f9cb205e"
   },
   {
     "name": "CKA - Certified Kubernetes Administrator",
     "issuer": "CNCF",
-    "date": "2022",
+    "date": "2025",
     "logo": "/static/images/logos/cka.png",
     "credential_url": "https://www.credly.com/badges/ba5a0c9d-3667-4432-a80f-136772ae73b1"
   },
   {
     "name": "KCNA - Kubernetes and Cloud Native Associate",
     "issuer": "CNCF",
-    "date": "2021",
+    "date": "2025",
     "logo": "/static/images/logos/kcna.png",
     "credential_url": "https://www.credly.com/badges/6506c4e7-565c-4771-92b8-6c5f26b040c0"
   },
   {
     "name": "KCSA - Kubernetes and Cloud Native Security Associate",
     "issuer": "CNCF",
-    "date": "2021",
+    "date": "2025",
     "logo": "/static/images/logos/kcsa.png",
     "credential_url": "https://www.credly.com/badges/48c05550-b997-4931-a49d-cb5a8ffcf0d3"
   },
   {
     "name": "AWS Solutions Architect Associate (SAA-C03)",
     "issuer": "AWS",
-    "date": "2023",
+    "date": "2024",
     "logo": "/static/images/logos/saac03.png",
     "credential_url": "https://www.credly.com/badges/a58824f4-b333-4ef0-9a5d-358abc04e76a"
   },
   {
     "name": "AWS CloudOps Engineer Associate (SOA-C03)",
     "issuer": "AWS",
-    "date": "2023",
+    "date": "2025",
     "logo": "/static/images/logos/soac03.png",
     "credential_url": "https://www.credly.com/badges/f7e5fcaf-bc4d-4419-b6bd-48194489f168"
   },
   {
     "name": "HashiCorp Certified: Terraform Associate",
     "issuer": "HashiCorp",
-    "date": "2022",
+    "date": "2025",
     "logo": "/static/images/logos/hcta0003.png",
     "credential_url": "https://www.credly.com/badges/f2d6cb75-aa55-4b9b-bc39-ed53ab1cd773"
   }

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="py-12" id="projects-page">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-display font-semibold">{{ t.sections.projects }}</h1>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {% for project in projects %}
+    <article class="glass rounded-xl p-4 shadow-soft flex flex-col gap-3">
+      <div class="flex justify-between items-start">
+        <div>
+          <h3 class="text-xl font-semibold">{{ project.name }}</h3>
+          <p class="text-sm text-slate-400">{{ project.language or 'Multi-lang' }}</p>
+        </div>
+        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">Repo</a>
+      </div>
+      <p class="text-slate-300">{{ project.description }}</p>
+      {% if project.readme_preview %}
+      <pre class="text-xs text-slate-400 bg-slate-900/70 p-3 rounded-md overflow-hidden">{{ project.readme_preview }}</pre>
+      {% endif %}
+      <div class="flex flex-wrap gap-2">
+        {% for topic in project.topics %}
+        <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-100 text-xs">{{ topic }}</span>
+        {% endfor %}
+      </div>
+      <div class="text-xs text-slate-400">Mis à jour {{ project.updated_at.date() if project.updated_at else '' }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

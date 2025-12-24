@@ -1,0 +1,42 @@
+[
+  {
+    "company": "Cdiscount (Daveo)",
+    "role": "DevOps Engineer - Kubernetes",
+    "start": "12/2025",
+    "end": "Present",
+    "description": "Operating and securing production-grade Kubernetes platforms, administering Harbor and Ceph/Rook, automating infrastructure with Terraform, Ansible and Helm, and enabling GitOps practices.",
+    "technologies": ["Vanilla Kubernetes", "Harbor", "Ceph", "Rook", "Terraform", "Ansible", "Helm", "GitOps"]
+  },
+  {
+    "company": "CGI",
+    "role": "Tech Lead & Ops Platform Owner",
+    "start": "09/2022",
+    "end": "08/2025",
+    "description": "Led a 6-member DevOps team managing a containerized DevOps tooling platform (Kubernetes RKE2), overseeing the application lifecycle and acting as the technical client liaison for onboarding and ongoing follow-up.",
+    "technologies": ["RKE2", "GitLab CI", "Helm", "Kubernetes"]
+  },
+  {
+    "company": "CGI",
+    "role": "Infrastructure as Code & GitOps",
+    "start": "09/2023",
+    "end": "01/2024",
+    "description": "Automated K3s and RKE2 cluster provisioning using Ansible and GitLab CI, with DevOps tools deployed via Helm charts and managed through Argo CD.",
+    "technologies": ["K3s", "RKE2", "GitLab CI", "Ansible", "ArgoCD", "Helm"]
+  },
+  {
+    "company": "CGI",
+    "role": "AWS Cloud & Secure CI/CD",
+    "start": "01/2023",
+    "end": "04/2023",
+    "description": "Designed and operated serverless APIs on AWS, industrialized CI/CD pipelines using GitLab CI and CloudFormation, and embedded DevSecOps best practices.",
+    "technologies": ["AWS", "CloudFormation", "GitLab CI" , "API Gateway", "Lambda", "Aurora", "S3"]
+  },
+  {
+    "company": "CGI",
+    "role": "Observability & Monitoring",
+    "start": "03/2022",
+    "end": "09/2022",
+    "description": "Implemented an ELK-based monitoring stack, automated agent deployment and dashboard creation, and enhanced log coverage while improving the alert signal-to-noise ratio.",
+    "technologies": ["ELK", "Jenkins", "Ansible", "Scripting bash"]
+  }
+]

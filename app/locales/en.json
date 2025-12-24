@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Khaled El Ghammarti | Systems & Network Engineer",
+    "description": "Cloud, DevOps and Cybersecurity portfolio with experience, projects and certifications.",
+    "og_image": "/static/images/projects/og.png"
+  },
+  "hero": {
+    "name": "Khaled EL GHAMMARTI",
+    "title": "Cloud & DevSecOps Engineer",
+    "bio": "Cloud & DevSecOps engineer crafting secure, automated, observable platforms. Kubernetes, AWS, IaC, GitOps, and platform reliability are my playground.",
+    "cta_resume": "Download my resume",
+    "cta_contact": "Let's talk"
+  },
+  "sections": {
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "tech_stack": "Technology Stack",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "made_with": "Built with FastAPI, Jinja2, Tailwind and Alpine.js"
+  }
+}

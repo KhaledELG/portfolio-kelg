@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="grid lg:grid-cols-2 gap-8 items-center py-12" id="hero">
+  <div class="space-y-6">
+    <p class="text-cyan-300 uppercase text-sm tracking-[0.3em]">Portfolio</p>
+    <h1 class="text-4xl sm:text-5xl font-display font-bold leading-tight">Khaled EL GHAMMARTI</h1>
+    <p class="text-xl text-slate-300">Cloud & DevSecOps Engineer</p>
+    <p class="text-slate-400 max-w-2xl">Cloud & DevSecOps engineer crafting secure, automated, observable platforms. Kubernetes, AWS, IaC, GitOps, and platform reliability are my playground.</p>
+    <div class="flex flex-wrap gap-3">
+    <a href="/resume" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold shadow-soft hover:-translate-y-0.5 transition">Download my resume</a>
+    <a href="#contact" class="px-4 py-2 rounded-md border border-cyan-500 text-cyan-100 font-semibold hover:bg-cyan-500/10 transition">Let’s talk</a>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
+      <p class="text-sm text-slate-400">Cloud</p>
+      <p class="text-3xl font-display font-semibold">Resilient</p>
+      <p class="text-slate-400 mt-2">Secure multi-cloud architectures.</p>
+    </div>
+    <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
+      <p class="text-sm text-slate-400">DevOps</p>
+      <p class="text-3xl font-display font-semibold">Automated</p>
+      <p class="text-slate-400 mt-2">CI/CD, GitOps, observability.</p>
+    </div>
+    <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
+      <p class="text-sm text-slate-400">Security</p>
+      <p class="text-3xl font-display font-semibold">Hardened</p>
+      <p class="text-slate-400 mt-2">Zero trust, IAM, SOC.</p>
+    </div>
+    <div class="glass rounded-xl p-4 shadow-soft" x-data="reveal" :class="{'fade-up': visible}">
+      <p class="text-sm text-slate-400">Monitoring</p>
+      <p class="text-3xl font-display font-semibold">Observable</p>
+      <p class="text-slate-400 mt-2">SLOs, alerting, dashboards.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">Skills</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {% for category, items in skills.items() %}
+    <div class="glass rounded-xl p-4 shadow-soft">
+      <p class="text-sm text-cyan-200 uppercase tracking-wide">{{ category }}</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {% for item in items %}
+        <span class="px-3 py-1 rounded-full bg-slate-800 text-sm">{{ item }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="experience" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">Experience</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <ol class="relative border-l border-slate-800 space-y-6">
+    {% for exp in experiences %}
+    <li class="pl-6">
+      <div class="absolute w-3 h-3 bg-cyan-400 rounded-full -left-1.5 mt-2"></div>
+      <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+        <span class="font-semibold text-slate-200">{{ exp.role }}</span>
+        <span>•</span>
+        <span>{{ exp.company }}</span>
+        <span>•</span>
+        <span>{{ exp.start }} — {{ exp.end }}</span>
+      </div>
+      <p class="text-slate-300 mt-2">{{ exp.description }}</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {% for tech in exp.technologies %}
+        <span class="px-3 py-1 rounded-full bg-slate-800 text-xs">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="technology-stack" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">Technology Stack</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for category, items in tech_stack.items() %}
+    <div class="glass rounded-xl p-4 shadow-soft">
+      <p class="text-sm text-cyan-200 uppercase tracking-wide">{{ category }}</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {% for item in items %}
+        <span class="px-3 py-1 rounded-full bg-slate-800 text-sm">{{ item }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="projects" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">Projects</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {% for project in projects %}
+    <article class="glass rounded-xl p-4 shadow-soft flex flex-col gap-3" x-data="reveal" :class="{'fade-up': visible}">
+      <div class="flex justify-between items-start">
+        <div>
+          <h3 class="text-xl font-semibold">{{ project.name }}</h3>
+          <p class="text-sm text-slate-400">{{ project.language or 'Multi-lang' }}</p>
+        </div>
+        <a class="text-cyan-300 text-sm" href="{{ project.url }}" target="_blank" rel="noreferrer">Repo</a>
+      </div>
+      <p class="text-slate-300">{{ project.description }}</p>
+      {% if project.readme_preview %}
+      <pre class="text-xs text-slate-400 bg-slate-900/70 p-3 rounded-md overflow-hidden">{{ project.readme_preview }}</pre>
+      {% endif %}
+      <div class="flex flex-wrap gap-2">
+        {% for topic in project.topics %}
+        <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-100 text-xs">{{ topic }}</span>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="certifications" class="py-10">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-display font-semibold">Certifications</h2>
+    <div class="h-px flex-1 ml-4 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+  </div>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {% for cert in certifications %}
+    <div class="glass rounded-xl p-4 shadow-soft flex items-center gap-4">
+      <div class="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center">
+        {% if cert.logo %}
+        <img src="{{ cert.logo }}" alt="{{ cert.name }}" class="max-h-10 object-contain" loading="lazy" />
+        {% else %}
+        <span class="text-cyan-200 text-sm">Logo</span>
+        {% endif %}
+      </div>
+      <div>
+        <p class="font-semibold">{{ cert.name }}</p>
+        <p class="text-sm text-slate-400">{{ cert.issuer }} • {{ cert.date }}</p>
+        {% if cert.credential_url %}
+        <a class="text-xs text-cyan-300" href="{{ cert.credential_url }}" target="_blank" rel="noreferrer">Vérifier</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contact" class="py-12">
+  <div class="glass rounded-2xl p-8 shadow-soft grid md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-2xl font-display font-semibold mb-3">Contact</h3>
+      <p class="text-slate-300">Ready to discuss cloud migration, platform hardening, or observability.</p>
+      <div class="mt-4 flex gap-3">
+        <a class="px-4 py-2 rounded-md bg-cyan-500 text-slate-950 font-semibold" href="mailto:khaled.elghammarti@hotmail.com">Email</a>
+        <a class="px-4 py-2 rounded-md border border-slate-700" href="https://www.linkedin.com/in/khaled-el-ghammarti" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="space-y-3 text-slate-300 text-sm">
+      <p>Available for freelance missions, security audits, or DevOps coaching.</p>
+      <p>Based in Bordeaux • Remote friendly.</p>
+      <p>Reply within 24h.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

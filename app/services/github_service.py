@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Iterable
 
 import httpx
+from pydantic import ValidationError
 
 from app.models.schemas import CacheItem, Project
 
@@ -83,19 +84,25 @@ class GitHubService:
             for repo in repos:
                 topics = repo.get("topics") or []
                 preview = await self._fetch_readme_preview(client, repo["name"])
-                project = Project(
-                    name=repo["name"],
-                    description=repo.get("description") or "",
-                    url=repo["html_url"],
-                    homepage=repo.get("homepage"),
-                    topics=topics,
-                    language=repo.get("language"),
-                    stars=repo.get("stargazers_count"),
-                    readme_preview=preview,
-                    updated_at=datetime.fromisoformat(
-                        repo["updated_at"].replace("Z", "+00:00")
-                    ),
-                )
+                homepage = repo.get("homepage") or None  # GitHub may return empty strings
+                try:
+                    project = Project(
+                        name=repo["name"],
+                        description=repo.get("description") or "",
+                        url=repo["html_url"],
+                        homepage=homepage,
+                        topics=topics,
+                        language=repo.get("language"),
+                        stars=repo.get("stargazers_count"),
+                        readme_preview=preview,
+                        updated_at=datetime.fromisoformat(
+                            repo["updated_at"].replace("Z", "+00:00")
+                        ),
+                    )
+                except ValidationError:
+                    # Skip repositories with malformed data instead of failing startup
+                    continue
+
                 projects.append(project)
 
         self._set_cache(projects)
